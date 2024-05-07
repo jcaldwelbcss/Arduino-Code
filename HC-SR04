@@ -1,10 +1,10 @@
 // Define pin connections
 const int trigPin = 9; // Digital pin connected to the trigger pin of the HC-SR04
 const int echoPin = 10; // Digital pin connected to the echo pin of the HC-SR04
-const int ledPin = 13; // Digital pin connected to the LED
+const int ledPin = 13; // Digital pin connected to the LED - nothing to do here, this uses the built-in LED as a indicator
 
 void setup() {
-  // Initialize serial communication
+  // Initialize serial communication - use the serial monitor on the IDE to see the results
   Serial.begin(9600);
   
   // Initialize LED pin as output
@@ -46,3 +46,4 @@ void loop() {
   // Add a short delay before the next reading
   delay(100);
 }
+//load the code and watch the serial monitor. Test the sensitivity of the HR sensor
