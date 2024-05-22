@@ -10,7 +10,7 @@ void setup() {
   Serial.begin(9600);
   
   // Initialize LED pin as output
-  pinMode(ledPin, OUTPUT);
+  pinMode(ledPin, INPUT);
 }
 
 void loop() {
@@ -26,7 +26,7 @@ void loop() {
   Serial.println(" cm");
   
   // Check if the distance is within the threshold
-  if (distance <= thresholdDistance) {
+  if (distance >= thresholdDistance) {
     // Turn on the LED
     digitalWrite(ledPin, HIGH);
     Serial.println("Object detected!");
