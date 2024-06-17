@@ -28,24 +28,24 @@ left();  //this calls the 'left' function, which doesn't exist, and should be th
 
 void forward()  //this function gives the instructions on what forward means
 {
-digitalWrite(m1en = LOW);  //this just resets the PWM, which helps some motor drivers deliver power
-digitalWrite(m2en = LOW);  //this just resets the PWM, which helps some motor drivers deliver power
-digitalWrite(m1r = HIGH);
-digitalWrite(m1b = LOW);
-digitalWrite(m1en = 255);
-digitalWrite(m2r = HIGH);
-digitalWrite(m2b = LOW);
-digitalWrite(m2en = 255);
+digitalWrite(m1en, LOW);  //this just resets the PWM, which helps some motor drivers deliver power
+digitalWrite(m2en, LOW);  //this just resets the PWM, which helps some motor drivers deliver power
+digitalWrite(m1r, HIGH);
+digitalWrite(m1b, LOW);
+digitalWrite(m1en, 255);
+digitalWrite(m2r, HIGH);
+digitalWrite(m2b, LOW);
+digitalWrite(m2en, 255);
 }
 
 void right()  //this function gives the instructions on what forward means
 {
-digitalWrite(m1en = LOW);  //this just resets the PWM, which helps some motor drivers deliver power
-digitalWrite(m2en = LOW);  //this just resets the PWM, which helps some motor drivers deliver power
-digitalWrite(m1r = LOW);
-digitalWrite(m1b = HIGH);
-digitalWrite(m1en = 255);
-digitalWrite(m2r = HIGH);
-digitalWrite(m2b = LOW);
-digitalWrite(m2en = 255);
+digitalWrite(m1en, LOW);  //this just resets the PWM, which helps some motor drivers deliver power
+digitalWrite(m2en, LOW);  //this just resets the PWM, which helps some motor drivers deliver power
+digitalWrite(m1r, LOW);
+digitalWrite(m1b, HIGH);
+digitalWrite(m1en, 255);
+digitalWrite(m2r, HIGH);
+digitalWrite(m2b, LOW);
+digitalWrite(m2en, 255);
 }
