@@ -1,0 +1,31 @@
+// C++ code
+//
+const int LED=9;
+
+char data;
+
+void setup()
+{
+  Serial.begin(4600);
+  pinMode(LED, OUTPUT);
+ 
+}
+
+void loop()
+{
+  if(Serial.available()>0)
+  {
+    data = Serial.read();
+    Serial.println(data);
+    if (data == '1')
+    {
+      digitalWrite(LED, HIGH);
+      Serial.println("LED ON");
+    }
+    else if (data =='0')
+    {
+      digitalWrite(LED,LOW);
+      Serial.print("LED OFF");
+    }
+  }
+}
