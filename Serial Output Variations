@@ -1,0 +1,7 @@
+Arduino Serial output can do more than just ASCII values
+
+data type      Example code                Serial output
+decimal        Serial.println(23);          23
+hexadecimal    Serial.println(23, HEX);     17
+octal          Serial.println(23), OCT;    27
+binary         Serial.println(23, BIN);    00010111
