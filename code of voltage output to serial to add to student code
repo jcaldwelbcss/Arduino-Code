@@ -1,0 +1,42 @@
+//these go with the other const int's at the start of the code
+const int lmrout = A0;
+const int lmbout = A1;
+const int rmrout = A2;
+const int rmbout = A3;
+
+//the following goes in the setup:
+  Serial.begin(9600);
+
+//in the loop
+showMotorOuts(); //this is a function that will be defined below the loop. This should go with each direction change/delay combo
+
+//this is the showMotorOuts method:
+void showMotorOuts(){
+  int lmrvolt = analogRead(lmrout);
+  int lmbvolt = analogRead(lmbout);
+  int rmrvolt = analogRead(rmrout);
+  int rmbvolt = analogRead(rmbout);
+
+  float lmrvoltV = lmrvolt * (5.0/1023.0);
+  float lmbvoltV = lmbvolt * (5.0/1023.0);
+  float rmrvoltV = rmrvolt * (5.0/1023.0);
+  float rmbvoltV = rmbvolt * (5.0/1023.0);
+
+  Serial.print("Left Motor Red Volage: ");
+  Serial.print(lmrvoltV);
+  Serial.println(" V");
+
+  Serial.print("Left Motor Black Volage: ");
+  Serial.print(lmbvoltV);
+  Serial.println(" V");
+
+  Serial.print("Right Motor Red Volage: ");
+  Serial.print(rmrvoltV);
+  Serial.println(" V");
+
+  Serial.print("Right Motor Black Volage: ");
+  Serial.print(rmbvoltV);
+  Serial.println(" V");
+
+}
+
