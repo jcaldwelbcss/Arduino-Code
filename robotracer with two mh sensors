@@ -1,0 +1,73 @@
+//this is the basic code for moving a robot car forward. Make sure to test this code before integrating it with other code.
+const int m1r = 2; //motor 1 red wire pin 1
+const int m1b = 3; //motor 1 black wire pin 2
+const int m1en = 9; //motor 1 EN pin 9
+const int m2r = 4; //motor 2 red wire pin 3
+const int m2b = 5; //motor 2 black wire pin 4
+const int m2en = 10; //motor 2 EN pin 10
+// Define pin connections
+const int sensorPin1 = 6; //sensor1 pin connected to D2 pin of the sensor
+const int sensorPin2 = 7; // sensor2 pin connected to D2 pin of the sensor
+
+
+
+void setup()
+{
+pinMode(m1r, OUTPUT);
+pinMode(m1b, OUTPUT);
+pinMode(m2r, OUTPUT);
+pinMode(m2b, OUTPUT);
+pinMode(m1en, OUTPUT);
+pinMode(m2en, OUTPUT); 
+
+// Initialize serial communication
+  Serial.begin(9600);
+}
+
+
+void loop() {
+  // Read the analog value from the sensor
+  int sensorValue = digitalRead(sensorPin);
+  
+  // Convert the analog value to distance in centimeters
+ // int distance = map(sensorValue, 0, 1023, 0, 100); // Map the analog value to a distance range
+  
+  // Check if the distance is within the threshold
+  if (sensorValue == 0) {
+    // Turn on the LED
+    digitalWrite(ledPin, HIGH);
+    Serial.println("Object detected!");
+  } else {
+    // Turn off the LED
+    digitalWrite(ledPin, LOW);
+    Serial.println("No object detected.");
+  }
+ 
+  
+
+  // Add a delay to prevent rapid readings
+  delay(100); // Adjust delay as needed}
+
+void forward()  //this function gives the instructions on what forward means
+{
+digitalWrite(m1en, LOW);  //this just resets the PWM, which helps some motor drivers deliver power
+digitalWrite(m2en, LOW);  //this just resets the PWM, which helps some motor drivers deliver power
+digitalWrite(m1r, HIGH);
+digitalWrite(m1b, LOW);
+digitalWrite(m1en, 255);
+digitalWrite(m2r, HIGH);
+digitalWrite(m2b, LOW);
+digitalWrite(m2en, 255);
+}
+
+void right()  //this function gives the instructions on what forward means
+{
+digitalWrite(m1en, LOW);  //this just resets the PWM, which helps some motor drivers deliver power
+digitalWrite(m2en, LOW);  //this just resets the PWM, which helps some motor drivers deliver power
+digitalWrite(m1r, LOW);
+digitalWrite(m1b, HIGH);
+digitalWrite(m1en, 255);
+digitalWrite(m2r, HIGH);
+digitalWrite(m2b, LOW);
+digitalWrite(m2en, 255);
+}
